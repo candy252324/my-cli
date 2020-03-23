@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dist": "webpack"
+    "dist": "node ./node_modules/webpack-cli/bin/cli.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,11 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
-    "babel-loader": "^8.0.0-beta.0"
+    "babel-loader": "^8.0.0-beta.0",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {}
 }
