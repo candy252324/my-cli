@@ -1,0 +1,6 @@
+{
+    "presets":[
+        "es2015"  // 对应安装的babel-preset-es2015
+    ],
+    "plugins":[]
+}
