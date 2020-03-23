@@ -5,6 +5,12 @@ module.exports={
         path:path.resolve(__dirname,'dist'),
         filename:"bundle.js"
     },
+    resolve:{
+        extensions:[".js",".ts"],
+        alias:{
+          Util: path.resolve(__dirname, 'src/js/'),  // 配置别名
+        }
+    },
     module: {
         rules: [
           {

@@ -1,4 +1,4 @@
-import bar from './js/util.ts'
+import bar from 'Util/util'
 bar([1,2])
 
 interface Foo{
