@@ -1,0 +1,17 @@
+{
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "init",
+            "preLaunchTask": "npm: dist", // 调试会话开始前执行的任务，一般为编译程序
+            "program": "${workspaceRoot}/src/index.ts", // 将要进行调试的程序的路径      
+            // "args": ["init"],  // 程序调试时传递给程序的命令行参数，一般设为空即可
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+            "cwd": "${workspaceRoot}",  // 调试程序时的工作目录，一般为${workspaceRoot}即代码所在目录 
+            "console": "externalTerminal"
+          },
+    ]
+}
