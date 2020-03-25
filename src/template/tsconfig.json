@@ -1,0 +1,18 @@
+// 不带任何输入文件的情况下调用tsc，编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录
+// 当命令行上指定了输入文件时(如tsc index.ts), tsconfig.json文件会被忽略
+{
+  "compilerOptions": {
+      "module": "commonjs",  // 指定生成哪个模块系统代码："None"，"CommonJS"，"AMD"，"System"，"UMD"，"ES6"或"ES2015"。 默认值 target === "ES6" ? "ES6" : "commonjs"
+      "outDir": "dist", // 编译输出JavaScript文件存放的文件夹
+      "target": "es5",
+      "allowJs": false, // 允许编译javascript文件
+      "removeComments":true,  // 编译生成的JavaScript文件是否移除注释
+      "sourceMap": true,  // 生成相应的.map文件。由于项目使用了webpack打包，会发现这里配置为true也没有生成对应的map文件，还需要在webpack.config中配置devtool: 'source-map'
+  },
+  "include": [
+      "./src/*"
+  ],
+  "exclude": [
+      "./node_modules"  
+  ]
+}

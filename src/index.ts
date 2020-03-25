@@ -1,15 +1,14 @@
-
 const program = require('commander');
-const init=require('./init')
- 
+const init = require('./init')
+const packageJson = require('../package.json')
+
+
 program
-  .version('0.1.0')
-//   .option('-f, --foo', 'enable some foo')
-//   .option('-b, --bar', 'enable some bar')
- 
+  .version(packageJson.version)
+
 program
   .command('init')
-  .action(function () {
+  .action(() => {
     init()
   })
 
