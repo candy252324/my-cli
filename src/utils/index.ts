@@ -42,7 +42,7 @@ export function createDir(dir: string) {
     /** 上级路劲 */
     let tempDir = path.parse(dir).dir;
     createDir(tempDir)
-    fs.mkdirSync(dir, err => { console.log(err) })
+    fs.mkdirSync(dir, err => { err && console.log(err) })
   }
   return true
 }

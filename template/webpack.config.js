@@ -4,6 +4,10 @@ const TerserPlugin = require('terser-webpack-plugin');   // https://www.npmjs.co
 module.exports = {
   target: 'node',  // webpack将在类似Node.js的环境中进行编译  https://webpack.js.org/concepts/targets/, 解决编译时commander中的fs,child_process等node模块resolve失败问题
   devtool: 'source-map',   // source-map
+  node: {
+    __filename: false,  // https://webpack.js.org/configuration/node/#node-__dirname
+    __dirname: false,
+  },
   entry: {
     index: "./src/index.ts",
   },

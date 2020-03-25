@@ -1,9 +1,7 @@
 const path = require("path")
-const fs = require("fs")
 const inquirer = require('inquirer');
 const handlebars = require('handlebars');
-
-import { CWD } from './constant'
+import { CWD, TEMPLATEDIR } from './constant'
 import { getAllFile, createFile } from './utils/index'
 import { UserInput } from './types/index'
 
@@ -33,16 +31,14 @@ const promptList = [{
  */
 function generator(options: UserInput) {
     const projectName = options.name
-    getAllFile(path.relative(CWD, './src/template')).then(allfiles => {
-        console.log(allfiles)
+    getAllFile(TEMPLATEDIR).then(allfiles => {
         for (const item of allfiles) {
-            const relativePath = path.relative('./src/template', item.dirPath);
-            const finalPath = path.join(projectName, relativePath, item.fileName)
-            console.log(finalPath)
+            const relativePath = path.relative(TEMPLATEDIR, item.dirPath);
+            const finalPath = path.join(CWD, projectName, relativePath, item.fileName)
             // https://www.npmjs.com/package/handlebars
             var template = handlebars.compile(item.content.toString());
             createFile(finalPath, template(options), err => {
-                console.log(err)
+                err && console.log(err)
             })
         }
     })
