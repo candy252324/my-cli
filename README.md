@@ -1,20 +1,24 @@
 # my-cli
 
-#### es6编译成es5
-1. `npm install babel-cli babel-preset-es2015 --save`  
-2. 添加.babelrc配置文件
+### 项目说明
+本项目是一个简易的cli工具，用于快速搭建一个需要支持es6语法和ts语法的项目框架。
+
+### 如何使用
+`npm install ecli -g`  
+`ecli init`   // 根据提示输入信息后会自动生成项目目录  
+
+生成的项目目录结构如下：  
 ```
-{
-    "presets":[
-        "es2015"  // 对应安装的babel-preset-es2015
-    ],
-    "plugins":[]
-}
+|- projectName
+  |- package.json
+  |- tsconfig.json
+  |- webpack.config.js
+  |- .gitignore
+  |- src
+    |- index.ts 
+      |- utils
+        |- index.ts
+
 ```
-3. package.json中配置命令
-```
-  "scripts": {
-    "compile-es6": "node ./node_modules/babel-cli/bin/babel.js index.js -o .dist.js"
-  },
-```
-4. 执行 `npm run compile-es6` 即可将indes.js中的es6语法编译成es5并输出
+`cd projectName`  // 进入项目目录  
+`npm run dist`   // 生成dist打包文件
