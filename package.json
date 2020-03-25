@@ -1,22 +1,25 @@
 {
-  "name": "my-cli",
-  "version": "1.0.0",
+  "name": "cxx-simple-cli",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dist": "node ./node_modules/webpack-cli/bin/cli.js"
   },
+  "bin": {
+    "ecli": "./bin/ecli"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/candy252324/my-cli.git"
+    "url": "git+https://github.com/candy252324/simple-cli.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/candy252324/my-cli/issues"
+    "url": "https://github.com/candy252324/simple-cli/issues"
   },
-  "homepage": "https://github.com/candy252324/my-cli#readme",
+  "homepage": "https://github.com/candy252324/simple-cli#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",

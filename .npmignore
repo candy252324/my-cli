@@ -1,0 +1,5 @@
+/*
+/dist/*.map
+!/template
+!/dist
+!/bin
