@@ -1,5 +1,5 @@
 ### 项目说明
-本项目是一个简易的cli工具，用于快速搭建一个需要支持es6语法和ts语法的项目框架。  
+本项目是一个简易的cli工具，用于快速搭建一个需要支持es6语法、ts语法及热重载的前端项目框架。  
 已发布到npm， [cxx-simple-cli](https://www.npmjs.com/package/cxx-simple-cli) 
 
 ### 安装
@@ -20,6 +20,7 @@ ecli init
   |- tsconfig.json
   |- webpack.config.js
   |- .gitignore
+  |- README.md
   |- src
     |- index.ts 
       |- utils
@@ -36,7 +37,10 @@ cd projectName
 ```
 npm install
 ```
-
+运行
+```
+npm run dev
+```
 打包
 ```
 npm run dist
